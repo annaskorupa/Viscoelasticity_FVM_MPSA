@@ -26,6 +26,7 @@ from scipy.interpolate import NearestNDInterpolator
 from src.viscoelastic_porepy import (
     ViscoelasticSolidConstants,
     ViscoelasticMomentumBalance,
+    ViscoelasticMomentumBalanceConvergence,
     setup_publication_style,
     save_convergence_results,
 )
@@ -54,7 +55,7 @@ def make_solid() -> ViscoelasticSolidConstants:
     )
 
 
-class ConvergenceMMSModel(ViscoelasticMomentumBalance):
+class ConvergenceMMSModel(ViscoelasticMomentumBalanceConvergence):
     """MMS Model for convergence test. Overrides BCs and body force."""
 
     def bc_type_mechanics(self, sd: pp.Grid) -> pp.BoundaryConditionVectorial:
