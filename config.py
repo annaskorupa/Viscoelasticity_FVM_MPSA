@@ -40,5 +40,5 @@ CONV_T_FINAL = 100.0             # snapshot time [s]
 # Nx = [10, 20, 40, 80] on the 0.1×0.1 m domain.
 # The finest level (cell_size=0.00125, Nx=80) is used as the reference
 # solution, so only the first 3 levels contribute error data points.
-CONV_CELL_SIZES = [0.01, 0.005, 0.0025, 0.00125]
+CONV_CELL_SIZES = [0.1, 0.05, 0.025, 0.0125]
 CONV_DT_VALUES = [8.0, 4.0, 2.0, 1.0]
