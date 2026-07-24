@@ -6,6 +6,7 @@ Usage::
         ViscoelasticSolidConstants,
         ViscoelasticMomentumBalance,
         ViscoelasticMomentumBalanceFracture,
+        ViscoelasticMomentumBalanceConvergence,
     )
 """
 
@@ -15,6 +16,7 @@ from .model import (
     ViscoelasticMomentumBalance,
     ViscoelasticMomentumBalanceFracture,
     ViscoelasticMomentumBalance1D,
+    ViscoelasticMomentumBalanceConvergence,
 )
 from .utils import (
     compute_strain_at_cell,
@@ -35,6 +37,7 @@ __all__ = [
     "ViscoelasticMomentumBalance",
     "ViscoelasticMomentumBalanceFracture",
     "ViscoelasticMomentumBalance1D",
+    "ViscoelasticMomentumBalanceConvergence",
     "compute_strain_at_cell",
     "setup_publication_style",
     "save_convergence_results",
