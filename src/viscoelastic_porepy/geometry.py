@@ -35,6 +35,17 @@ class GeometryMixin:
     def meshing_arguments(self) -> dict:
         return {"cell_size": self.params.get("cell_size", 0.00125)}
 
+class ConvergenceGeometryMixin(GeometryMixin):
+    """2D square domain (0.8 m × 0.8 m) without fractures for convergence studies.
+
+    """
+
+    units: pp.Units
+
+    def set_domain(self) -> None:
+        size = self.units.convert_units(0.8, "m")
+        self._domain = nd_cube_domain(2, size)
+
 
 class FractureGeometryMixin(GeometryMixin):
     """2D square domain with a diagonal fracture from (0.04, 0.04) to (0.06, 0.06).
