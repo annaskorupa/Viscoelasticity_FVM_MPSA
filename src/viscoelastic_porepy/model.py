@@ -15,7 +15,7 @@ import numpy as np
 import porepy as pp
 import matplotlib.pyplot as plt
 
-from .geometry import GeometryMixin, FractureGeometryMixin, Quasi1DGeometryMixin
+from .geometry import GeometryMixin, FractureGeometryMixin, Quasi1DGeometryMixin, ConvergenceGeometryMixin
 from .constitutive import ConstitutiveLawsU2
 from .variables import VariablesU2, RateEquation
 from .boundary_conditions import BoundaryConditionsMixin, RollerBoundaryConditionsMixin
@@ -276,6 +276,22 @@ class ViscoelasticMomentumBalance(
     pp.MomentumBalance,
 ):
     """Viscoelastic momentum balance on a plain 2D domain (no fractures)."""
+
+    pass
+
+class ViscoelasticMomentumBalanceConvergence(
+    ConvergenceGeometryMixinGeometryMixin,
+    BoundaryConditionsMixin,
+    BodyForceMixin,
+    RateEquation,
+    VariablesU2,
+    ConstitutiveLawsU2,
+    InitialConditionsU2,
+    SolutionStrategyU2,
+    ViscoelasticModelMixin,
+    pp.MomentumBalance,
+):
+    """Viscoelastic momentum balance on a plain 2D domain (no fractures) for convergence studies."""
 
     pass
 
