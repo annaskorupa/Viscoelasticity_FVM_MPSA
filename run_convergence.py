@@ -70,7 +70,7 @@ class ConvergenceMMSModel(ViscoelasticMomentumBalance):
         A_MMS = 1.0e-3
         b_MMS = 0.5 * (self.solid.shear_modulus2 / self.solid.viscosity)
         t = self.time_manager.time
-        L = 0.1  # domain size in config/geometry is 0.1 m
+        L = 0.8  # domain size in config/geometry is 0.8 m
 
         ux = A_MMS * np.sin(np.pi * cc[0] / L) * np.sin(np.pi * cc[1] / L) * (1.0 - np.exp(-b_MMS * t))
         uy = A_MMS * np.sin(np.pi * cc[0] / L) * np.sin(np.pi * cc[1] / L) * (1.0 - np.exp(-b_MMS * t))
@@ -97,7 +97,7 @@ class ConvergenceMMSModel(ViscoelasticMomentumBalance):
         lame_lambda2 = self.solid.lame_lambda2
         k2 = (2.0 * shear_modulus2 + 3.0 * lame_lambda2) / 3.0
 
-        L = 0.1
+        L = 0.8
         Lx, Ly = L, L
         kx = np.pi / Lx
         ky = np.pi / Ly
@@ -212,7 +212,7 @@ def compute_errors(models: dict) -> list[dict]:
         cc = sd.cell_centers
         A_MMS = 1.0e-3
         b_MMS = 0.5 * (model.solid.shear_modulus2 / model.solid.viscosity)
-        L = 0.1
+        L = 0.8
         ux_mms = A_MMS * np.sin(np.pi * cc[0] / L) * np.sin(np.pi * cc[1] / L) * (1.0 - np.exp(-b_MMS * T_FINAL))
         uy_mms = A_MMS * np.sin(np.pi * cc[0] / L) * np.sin(np.pi * cc[1] / L) * (1.0 - np.exp(-b_MMS * T_FINAL))
 
