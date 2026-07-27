@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Viscoelasticity FVM MPSA
 
 This repository contains an implementation of a viscoelastic material model extending the standard momentum balance module (`MomentumBalance`) in the **PorePy** library. 
@@ -45,3 +46,7 @@ Simulation results and plots will be saved in the `_output/` directory, which is
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+=======
+# Viscoelasticity_FVM_MPSA
+The provided code reproduces the numerical results for the simulation of the the viscoelastic behaviour of a rock mass described by the Malvern model. The numerical model is based on the finite volume method (FVM) with multi-point stress approximation (MPSA) discretisation.
+>>>>>>> main
